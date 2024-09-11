@@ -1,0 +1,11 @@
+/venv
+__pycache__
+*.bak
+*.o
+build
+llvmlib
+.vscode
+*.so
+llvm-temp
+.cache
+.idea
