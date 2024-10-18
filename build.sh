@@ -47,7 +47,18 @@ LLVM_GIT_TAG=llvmorg-18.1.8
 LLVM_TEMP_DIR=llvm-temp
 LLVM_LIB_DIR=llvmlib
 MAX_BUILD_JOBS=$(nproc --all)
-LIBARMDISASM=libarmdisasm.so
+PLATFORM=$(uname -s)
+
+case $PLATFORM in
+  Darwin)
+    LIB_EXT=".dylib"
+    ;;
+  *)
+    LIB_EXT=".so"
+    ;;
+esac
+
+LIBARMDISASM=libarmdisasm$LIB_EXT
 
 # Command-line arguments and defaults
 BUILD_ALL=true
@@ -233,7 +244,7 @@ build_python()
     echo "** Building Python package"
     echo "***************************************************************"
 
-    # Copy the libarmdisasm.so library into the python package structure
+    # Copy the libarmdisasm library into the python package structure
     if [[ ! -s $LIB_PATH ]]
     then
         echo "ERROR: $LIB_PATH does not exist, cannot build the python package"
@@ -258,7 +269,7 @@ build_python()
 ### Main entry point for build script ###
 
 # Start timer
-start=$EPOCHREALTIME
+start=$(date +%s)
 
 # Only short option names supported on command-line
 while getopts "adhj:lnpst" opt; do
@@ -323,7 +334,7 @@ if $BUILD_PYTHON; then build_python; fi
 if $UNIT_TESTS; then run_unit_tests; fi
 
 # Stop timer and calculate total time taken
-stop=$EPOCHREALTIME
+stop=$(date +%s)
 elapsed=$(bc -l <<< "$stop - $start")
 
 echo "****************************************************************"

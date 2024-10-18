@@ -6,6 +6,7 @@ build
 llvmlib
 .vscode
 *.so
+*.dylib
 llvm-temp
 .cache
 .idea

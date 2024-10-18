@@ -53,4 +53,4 @@ py-modules = ['armdisasm']
 where = ["."]
 
 [tool.setuptools.package-data]
-"armdisasm" = ["*.py", "libarmdisasm.so"]
+"armdisasm" = ["*.py", "libarmdisasm.so", "libarmdisasm.dylib"]

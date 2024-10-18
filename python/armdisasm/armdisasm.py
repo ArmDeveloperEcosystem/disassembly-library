@@ -25,12 +25,15 @@ functions.
 from ctypes import POINTER, Structure, CDLL, c_uint32, c_uint64, c_ubyte, c_bool, c_char_p
 from enum import Enum
 import os
+import platform
 
+# Platform specific constants
+LIB_EXT= ".dylib" if platform.system() == "Darwin" else ".so"
 
 # Constants
-AARCH64_INST_LEN = 4               # Length of an AArch64 instruction encoding in bytes.
-MAX_INST_LEN = 4                   # The maximum length of an instruction in bytes.
-LIBARMDISASM = "libarmdisasm.so"   # Name of the library's shared object file.
+AARCH64_INST_LEN = 4                      # Length of an AArch64 instruction encoding in bytes.
+MAX_INST_LEN = 4                          # The maximum length of an instruction in bytes.
+LIBARMDISASM = "libarmdisasm" + LIB_EXT   # Name of the library's shared object file.
 
 
 class ArmDisasmException(Exception):
