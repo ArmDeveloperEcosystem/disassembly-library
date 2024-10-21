@@ -46,15 +46,16 @@ set -e
 LLVM_GIT_TAG=llvmorg-18.1.8
 LLVM_TEMP_DIR=llvm-temp
 LLVM_LIB_DIR=llvmlib
-MAX_BUILD_JOBS=$(nproc --all)
 PLATFORM=$(uname -s)
 
 case $PLATFORM in
   Darwin)
     LIB_EXT=".dylib"
+    MAX_BUILD_JOBS=$(sysctl -n hw.logicalcpu)
     ;;
   *)
     LIB_EXT=".so"
+    MAX_BUILD_JOBS=$(nproc --all)
     ;;
 esac
 
