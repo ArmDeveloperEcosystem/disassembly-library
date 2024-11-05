@@ -38,6 +38,7 @@ Firstly, the build script will first perform a shallow clone of LLVM and apply a
 
 Secondly, libarmdisasm is created by combining the LLVM build and armdisasm code into a shared object library.
 
+```
  ___________________           __________________
 |                   |         |                  |
 |  Python bindings  |         |   C application  |
@@ -53,6 +54,7 @@ Secondly, libarmdisasm is created by combining the LLVM build and armdisasm code
             |             |           |
             | armdisasm.c |  LLVM MC  |
             |_____________|___________|
+```
 
 Once built, the resulting shared object library `libarmdisasm` can be linked and used as a component in your own C/C++ applications. The Python package can be installed to provide bindings for your Python applications.
 
