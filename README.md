@@ -1,3 +1,9 @@
+[![Ubuntu-2004 build](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2004.yml/badge.svg)](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2004.yml "Ubuntu 20.04 build status")
+[![Ubuntu-2204 build](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2204.yml/badge.svg)](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2204.yml "Ubuntu 22.04 build status")
+[![Ubuntu-2404 build](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2404.yml/badge.svg)](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/ubuntu-2404.yml "Ubuntu 24.04 build status")
+[![MacOS13 build](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/macos-13.yml/badge.svg)](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/macos-13.yml "MacOS Ventura build status")
+[![MacOS14 build](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/macos-14.yml/badge.svg)](https://github.com/ArmDeveloperEcosystem/disassembly-library/actions/workflows/macos-14.yml "MacOS Sonoma  build status")
+
 # Arm Disassembly Library
 
 Arm Disassembly Library is a software library and API for decoding and disassembling AArch64 instructions.
@@ -78,7 +84,7 @@ For more information and examples on how to use this tool, check out the [Arm Le
 
 ## Compatibility
 
-This library can be built for any platform, however it has only been tested on AArch64 Linux and x86-64 Linux. Currently, only AArch64 instructions are supported.
+This library can be built for any platform, however it has only been tested on AArch64 Linux and x86-64 Linux and MacOS. Currently, only AArch64 instructions are supported.
 
 Please consider raising a [GitHub issue](https://github.com/ArmDeveloperEcosystem/disassembly-library/issues/new) if this tool does not work as expected on your system.
 
